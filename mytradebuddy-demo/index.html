@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyTradeBuddy — Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Screen: Welcome / Sign Up -->
+    <section id="screen-signup" class="screen active">
+      <div class="card">
+        <h1 class="title">MyTradeBuddy</h1>
+        <p class="subtitle">Create a free demo account</p>
+        <form id="signup-form">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <label>Password</label>
+          <input type="password" id="password" placeholder="••••••••" required minlength="6">
+          <button type="submit" class="btn primary">Sign Up</button>
+          <p class="tiny">Demo accounts are stored for 30 days, then auto‑deleted (on this device).</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Screen: Start (Demo or Add Data) -->
+    <section id="screen-start" class="screen">
+      <div class="card">
+        <h2 class="title">Get Started</h2>
+        <p class="subtitle">Choose how you want to try it:</p>
+        <div class="actions">
+          <button id="btn-demo" class="btn primary">Use Demo Data</button>
+          <button id="btn-add" class="btn outline">Add My Data</button>
+        </div>
+        <p class="tiny center note">“Add My Data” comes in the next step of the build. For now, try demo mode.</p>
+        <button id="btn-logout" class="btn link">Log out</button>
+      </div>
+    </section>
+
+    <!-- Screen: Analyze -->
+    <section id="screen-analyze" class="screen">
+      <div class="card">
+        <h2 class="title">Analyze</h2>
+        <p class="subtitle">Tap the button to calculate your scores.</p>
+        <button id="btn-analyze" class="btn primary large">Get My Score</button>
+        <div id="loader" class="loader hidden">
+          <div class="pulse"></div>
+          <p>Calculating…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen: Results -->
+    <section id="screen-results" class="screen">
+      <div class="card">
+        <h2 class="title">Your Results</h2>
+        <div class="tiles">
+          <div class="tile">
+            <div class="label">Mindset</div>
+            <div class="value" id="val-mindset">—</div>
+          </div>
+          <div class="tile">
+            <div class="label">Rules</div>
+            <div class="value" id="val-rules">—</div>
+          </div>
+          <div class="tile">
+            <div class="label">Backtest</div>
+            <div class="value" id="val-backtest">—</div>
+          </div>
+          <div class="tile accent">
+            <div class="label">Confidence</div>
+            <div class="value" id="val-confidence">—</div>
+          </div>
+        </div>
+        <div class="notes" id="notes"></div>
+        <div class="actions">
+          <button id="btn-retry" class="btn outline">Run Again</button>
+          <button id="btn-home" class="btn link">Home</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
